@@ -1,0 +1,70 @@
+/* _modules.scss */
+/*  Modules are little pieces of code for different parts of your page */
+
+
+/*  .speakers */
+.speakers {
+    .artist {
+        @include clearfix;
+
+        h3 {
+            color: $gina-red-secondary;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted $primary-accent-gray;
+            margin-bottom: 5px;
+        }
+
+        a{
+            &:hover {
+                    color: $gina-red;
+                    font-weight: bold;
+                }
+        }
+    }
+}
+
+/*  #nextmeeting */
+#nextmeeting {
+    @include clearfix;
+    img {
+        @include border-radius(5px);
+        width: 30%;
+        max-width: 130px;
+        float: left;
+        margin-right: 3%;
+    }
+}
+
+/*  .socialmediaicons */
+.socialmediaicons {
+    .title {
+        float: left;
+    }
+    ul {
+        float: left;
+        li {
+            display: inline-block;
+            margin-left: 15px;
+            img {
+                width: 40px;
+                @include border-radius(5px);
+            }
+        }
+    }
+}
+
+/*  .pixgrid */
+.pixgrid {
+    @include clearfix;
+
+    img {
+        @include border-radius(5px);
+        width: 30%;
+        max-width: 220px;
+        cursor: pointer;
+    }
+}
+
+
+

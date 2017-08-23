@@ -1,0 +1,237 @@
+/*  Susy Setup */
+$total-columns      : 12;               // a 12-column grid
+$column-width       : 4em;              // each column is 4em wide
+$gutter-width       : 1.5em;              // 1em gutters between columns
+$grid-padding       : $gutter-width;    // grid-padding equals to gutter width
+
+@include border-box-sizing;
+
+$small              : 30em;
+$medium            : 47em;
+$large              : 75em;
+
+
+/*  Content */
+/*  .layout */
+.layout {
+    @include container; // establish a layout context
+
+    padding: 0 3%;
+
+    .primary {
+        margin-top: .2em;
+        @include at-breakpoint($medium) {
+            @include span-columns(8,12);
+
+            #nextmeeting {
+                @include border-radius(5px);
+                background: $gina-gray-text;
+                color: $gina-white;
+                padding: 0 20px 20px 20px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+                h1 {
+                    text-shadow: none;
+                    color: $gina-white;
+                    padding-bottom: 5px;
+                }
+
+                i {margin-right: 0.4rem}
+
+                .address {
+                    color: $gina-red-secondary;
+                    font-style: bold;
+                    &:hover {
+                        color: $gina-red;
+                        font-weight: bold;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .secondary {
+        @include at-breakpoint($medium) {
+            @include span-columns(4 omega, 12);
+            font-size: 0.9rem;
+            h1 {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+
+
+/*  header */
+header {
+    .branding {
+        margin: 0 auto;
+
+        img {
+            @include border-radius;
+            width: 100%;
+            position: relative;
+            max-width: 428px;
+            margin-top: 50px;
+            border: 1px solid $gina-red;
+            background-color: rgba(255, 255, 255, 0.6);
+            background-blend-mode: overlay;
+            -webkit-background-blend-mode: overlay;
+        }
+    }
+
+    .hero {
+        width: 100%;
+        @include at-breakpoint($medium) {
+            @include single-transition(all, 1s, ease-out);
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 680px;
+            background: url('../../images/scissors.jpg') no-repeat center center;
+            background-color: rgba(255, 255, 255, 0.3);
+            background-blend-mode: overlay;
+            background-size: cover;
+        }
+    }
+}
+
+/*  .navigation */
+.navigation {
+    background-color: #fff;
+    ul.nav {
+        @include at-breakpoint($small) {
+            @include horizontal-list;
+        }
+        li {
+            margin-right: 10px;
+            padding: 5px 10px 5px 10px;
+
+            i {
+                color: $gina-red;
+                margin-right: 30px;
+            }
+            a {
+                @include single-transition(all, .5s, ease-out);
+                display: inine-block;
+                text-decoration: none;
+                &:hover {
+                    background-color: $gina-red;
+                    color: $gina-white;
+                    font-weight: bold;
+                    padding: 5px 10px 5px 10px;
+                }
+            }
+        }
+    }
+}
+
+/* speakerslist */
+.speakerslist {
+    img {
+            @include border-radius;
+            border: 1px solid $gina-red;
+            width: 120px;
+            float: left;
+            margin: 20px 10px 10px 5px;
+        }
+
+    i { padding-right: 20px;}
+
+    @include at-breakpoint($medium) {
+        text-align: center;
+        @include background(linear-gradient(top, lighten($gina-white, 1), $gina-red-secondary));
+        overflow: hidden;
+        color: $gina-white;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        #{headings()} {
+            text-shadow: none;
+            border-bottom: none !important;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            line-height: 1em;
+            @include at-breakpoint($large) {
+                font-size: 3.8rem;
+                line-height: 1em;
+            }
+        }
+
+        h3 {
+            color: $gina-white !important;
+            line-height: .9rem;
+        }
+
+        .small {
+            padding-top: .4em !important;
+            line-height: 1em;
+
+            a {
+                color: $gina-white;
+                text-decoration: none;
+                &:hover {
+                    color: $metacritic-gray !important;
+                }
+            }
+        }
+
+        img.speaker {
+            float: none;
+            width: 40%;
+            max-width: 170px;
+            margin: 0 auto;
+        }
+
+        .small {
+            display: block;
+        }
+
+        p:nth-of-type(2) {
+            font-weight: 200;
+            text-align: left;
+            font-size: .8em;
+            line-height: 0;
+            @include single-transition(all, .3s, ease-out);
+            opacity: 0;
+        }
+
+        &:hover {
+            p:nth-of-type(2) {
+                line-height: 1.5em;
+                opacity: 1;
+            }
+        }
+
+        .artist {
+            @include span-columns(4,12);
+        }
+
+        .artist:nth-of-type(3) {
+            @include span-columns(4 omega, 12);
+        }
+    }
+}
+
+/*  footer */
+footer {
+    background-color: $gina-black-bg;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 100px;
+
+    span {
+        font-size: 1.2rem;
+        color: $gina-red-secondary;
+    }
+
+    .bottom-navigation {
+        @include clearfix;
+        padding-top: 30px;
+    }
+
+}

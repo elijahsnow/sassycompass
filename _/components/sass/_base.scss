@@ -1,0 +1,49 @@
+/* _base.scss */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700|Ovo);
+
+body {
+    font-family: $font-primary;
+    font-size: 1.0rem;
+    font-weight: 300;
+    line-height: 160%;
+    color: $gina-red;
+    background-color: $bg-color;
+}
+
+#{headings()} {
+    font-family: $font-secondary;
+    font-weight: normal;
+    color: $gina-red-secondary;
+    text-transform: uppercase;
+    @include text-shadow($gina-white 0px 1px);
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: .4rem;
+    border-bottom: 1px solid $secondary-accent-gray;
+    padding-top: 10px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    line-height: 100%;
+    margin: 20px 0 0 0;
+}
+
+a {
+    text-decoration: none;
+    color: $gina-red;
+    &:hover {
+        color: $gina-red-secondary;
+    }
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.small {
+    font-size: 1rem;
+    color: $gina-gray-text;
+}
